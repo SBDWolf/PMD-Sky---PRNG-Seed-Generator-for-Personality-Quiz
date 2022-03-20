@@ -1,5 +1,5 @@
 # PMD-Sky---PRNG-Seed-Generator-for-Personality-Quiz
-A C++ program that helps in finding optimal PRNG Seeds for the personality quiz in PMD Sky.
+A C++ program that helps in finding optimal PRNG Seeds for the personality quiz in PMD Sky. Compile and run in your C++ IDE of choice (I use Codeblocks).
 
 Taken directly from the comments in the program itself:
 
