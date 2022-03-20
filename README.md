@@ -37,7 +37,7 @@ This program assumes that you were playing the intro like in a speedrun: holding
 possible PRNG seeds, and spits out the fastest one out of all based on character length of all the questions. No check is done on natures that can be obtained from the questions, or how many times
 you have to select responses different from the top one. I've found factors manually after generating the seeds.
 
-The way I've used this program is, I used a different C++ program and memory watch on Bizhawk 2.8 with the MelonDS 0.9.3 core to understand how many times PRNG was advanced between the moment it
+The way I've used this program is, I used a different C++ program (included here as the Seed Advancement Predictor) and memory watch on Bizhawk 2.8 with the MelonDS 0.9.3 core to understand how many times PRNG was advanced between the moment it
 got loaded into a save file and the moment the questions were generated. I then generated a seed, tried it, and it worked fine.
 I then tried that seed on a 2DS, but it didn't work because a real DS advances the PRNG a different amount of times than emulator. I used that same program to understand by how many times that was
 (around 19), then adjusted this program with that in mind, generated some new seeds, and tried them. I was still missing the predicted questions, and that's when I found out that there's some
