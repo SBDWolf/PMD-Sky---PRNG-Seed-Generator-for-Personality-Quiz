@@ -199,7 +199,7 @@ int readInt(){
 
 int main(){
     int gseedsCount=0;
-    cout<<"Insert number of PRNG advances.\n(MelonDS 0.9.3 is around 1378, real DS is around 1360. Toy with this value a little if it doesn't work): ";
+    cout<<"Insert number of PRNG advances.\n(MelonDS 0.9.3, DeSmuME 0.9.11 and real DS are around 1378, 1231, and 1360 respectively. Toy with this value a little if it doesn't work): ";
     int PRNGAdvances=readInt();
 
     while(true){
