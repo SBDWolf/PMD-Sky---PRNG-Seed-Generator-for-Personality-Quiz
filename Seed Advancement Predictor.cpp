@@ -18,7 +18,7 @@ int main(){
   if (myfile.is_open())
   {
       //change this value to change the seed being used.
-      int x=13047;
+      int x=10615;
 	myfile<<"Starting seed"<<": "<<x<<endl;
 	for (int i=0;i<5000;i++){
         x=(109*x+1021)%65536;
@@ -26,7 +26,6 @@ int main(){
             myfile<<"Advancement "<<i+1<<": "<<x<<endl;
         }
         else{
-            x=(109*x+1021)%65536;
             myfile<<"-Advancement "<<i+1<<": "<<x<<endl;
         }
 
