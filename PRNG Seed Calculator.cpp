@@ -147,22 +147,22 @@ void calcSpeed(int r, int *minCharCount, int *fastestSeed, int gseedsCount){
     }
 
     //This block of code excludes seeds that have been previously generated and displayed on the program.
-   bool seedValidity=true;
-   for (int y=0;y<gseedsCount;y++){
+    bool seedValidity=true;
+    for (int y=0;y<gseedsCount;y++){
         if(gseeds[y]==r){
             seedValidity=false;
         }
-   }
+    }
 
 
     //saves a seed as the fastest one if it produces the shortest total string length from questions
-  if(totalChars<*minCharCount&&seedValidity==true){
-    *minCharCount=totalChars;
-    *fastestSeed=r;
-    for (int q=0;q<8;q++){
-        fastestQuestions[q]=questions[q];
+    if(totalChars<*minCharCount&&seedValidity==true){
+        *minCharCount=totalChars;
+        *fastestSeed=r;
+        for (int q=0;q<8;q++){
+            fastestQuestions[q]=questions[q];
+        }
     }
-   }
 
 }
 
@@ -199,7 +199,7 @@ int readInt(){
 
 int main(){
     int gseedsCount=0;
-    cout<<"Insert number of PRNG advances.\n(MelonDS 0.9.3, DeSmuME 0.9.11 and real DS are around 1378, 1231, and 1360 respectively. Toy with this value a little if it doesn't work): ";
+    cout<<"Insert number of PRNG advances.\n(MelonDS 0.9.3, DeSmuME 0.9.11, DeSmuME 0.9.11 with dynamic recompiler set at 100, 3DS and OG DS are around 1378, 1231, 1167, 1360 and 1359 respectively. Toy with this value a little if it doesn't work): ";
     int PRNGAdvances=readInt();
 
     while(true){
@@ -212,7 +212,7 @@ int main(){
 
 
     for(int r=0;r<65536;r++){
-            seed=r;
+        seed=r;
     	//This for loop refers to the amount of times the rng is advanced between the title screen and the moment the questions get generated.
     	//Seems like DS advances the rng fewer times than MelonDS 0.9.3. MelonDS gets around 1378, a real DS is around 1360. This amount is a little inconsistent, so to find a DS seed...
     	//...I had to toy with this value a bit. Generate a seed, try it out, if it doesn't work change this value a little. :/
@@ -220,8 +220,8 @@ int main(){
         for (int i=0;i<PRNGAdvances;i++){
             advancePRNG();
         }
-        	genqs();
-        	calcSpeed(r, &minCharCount, &fastestSeed, gseedsCount);
+        genqs();
+        calcSpeed(r, &minCharCount, &fastestSeed, gseedsCount);
     }
 
     //Outputs information on screen about the fastest seed found
