@@ -14,7 +14,7 @@ If a save file is not present, then the game will simply keep advancing the PRNG
 The PRNG algorithm is a very simple Linear Congruential Generator algorithm, with parameters x(n+1)=(109\*x(n)+1021)%65536 (where x(n+1) is the value of the new x and x(n) is the current value of x).
 Every frame that is spent idle during the intro, the PRNG is typically advanced once per frame. If you are holding ANY button on the controller, it is typically advanced twice per frame.
 
-With this in mind, the speedrunning strat to manipulate the quiz is to hold B at all times during the intro and buffer the "New game" screen (20-frame window) to essentially aim to advance the
+With this in mind, the speedrunning strat to manipulate the quiz is to hold B at all times during the intro and buffer the "New game" screen (21-frame window) to essentially aim to advance the
 PRNG a consistent, predictable amount of time before the questions get generated.
 This amount of times varies depending on platforms, and even on the same platforms there may be weird small differences between different seeds that I haven't quite been able to understand.
 The frame the questions get generated, the following happens:
